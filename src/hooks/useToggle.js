@@ -4,10 +4,10 @@ import { useState } from 'react';
  * @param {Boolean} initialState
  * @returns Boolean
  */
-export const useToggle = (initialState) => {
+export const useToggle = initialState => {
   const [state, setState] = useState((initialState = false));
 
-  const toggle = () => setState((initialState) => !initialState);
+  const toggle = () => setState(initialState => !initialState);
 
   return [state, toggle];
 };

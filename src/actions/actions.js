@@ -11,7 +11,7 @@ import { types } from '../types/types';
 export const send = (res, name) => ({
   type: types.send,
   payload: res,
-  name: name,
+  name,
 });
 
 //* Acciones asincronas
@@ -20,11 +20,11 @@ export const send = (res, name) => ({
  * @param {String} locationName
  * @returns Array
  */
-export const getCoordinates = (locationName) => {
-  return (dispatch) => {
+export const getCoordinates = locationName => {
+  return dispatch => {
     getArrOfCoordinates(locationName)
-      .then((res) => dispatch(send(res.data, 'cities')))
-      .catch((err) => console.error(err));
+      .then(res => dispatch(send(res.data, 'cities')))
+      .catch(err => console.error(err));
   };
 };
 /**
@@ -34,9 +34,9 @@ export const getCoordinates = (locationName) => {
  * @returns Object
  */
 export const weatherForecast = (lat, lon) => {
-  return (dispatch) => {
+  return dispatch => {
     getWeatherForecast(lat, lon)
-      .then((res) => dispatch(send(res.data, 'weatherForecast')))
-      .catch((err) => console.error(err));
+      .then(res => dispatch(send(res.data, 'weatherForecast')))
+      .catch(err => console.error(err));
   };
 };

@@ -16,7 +16,7 @@ export const CitySelection = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { cities = [] } = useSelector((state) => state.location);
+  const { cities = [] } = useSelector(state => state.location);
 
   const handleButton = (lat, lon, cityName) => {
     dispatch(weatherForecast(lat, lon));
@@ -37,7 +37,7 @@ export const CitySelection = () => {
       <h6 className=' fs-4 p-3'>Select a city</h6>
       <ul className='list-group'>
         {cities.length !== 0 &&
-          cities.map((city) => {
+          cities.map(city => {
             const { lat, lon, name, state, country } = city;
             return (
               <button

@@ -17,4 +17,7 @@ const composeEnhancers =
     : compose;
 
 // Asignacion del principal contenedor de estado de la webapp
-export const store = storeConfig(reducers, composeEnhancers(applyMiddleware(thunk)));
+export const store = storeConfig(
+  reducers,
+  composeEnhancers(applyMiddleware(thunk))
+);

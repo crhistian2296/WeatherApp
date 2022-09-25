@@ -1,9 +1,11 @@
-import { useContext } from 'react';
+import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { DataContext } from './data/DataContext';
 
 /**
  * Ficha contenedor de la informacion meteorologica
- * @param {String} localtime
+ * @param {JSX Element}
+ * @param {number} localtime
  * @returns JSX Element
  */
 export const WeatherSheet = ({ children, localTime }) => {
@@ -20,4 +22,9 @@ export const WeatherSheet = ({ children, localTime }) => {
       </div>
     </>
   );
+};
+
+WeatherSheet.propTypes = {
+  children: PropTypes.node.isRequired,
+  localTime: PropTypes.number.isRequired,
 };

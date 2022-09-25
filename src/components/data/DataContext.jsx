@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { createContext } from 'react';
 import { useToggle } from '../../hooks/useToggle';
 
@@ -6,7 +7,7 @@ export const DataContext = createContext();
  * Contexto creado para manejar eventos sencillos como el color del tema
  * @returns JSX Element
  */
-const DataProvider = children => {
+const DataProvider = ({ children }) => {
   const [theme, toggleTheme] = useToggle();
   const [sendedSearch, toggleSearch] = useToggle();
 
@@ -23,6 +24,10 @@ const DataProvider = children => {
   return (
     <DataContext.Provider value={initialValue}>{children}</DataContext.Provider>
   );
+};
+
+DataProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default DataProvider;

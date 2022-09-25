@@ -1,6 +1,6 @@
 import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { DataContext } from '../data/DataContext';
 
 /**
@@ -15,7 +15,8 @@ const Header = () => {
   return (
     <header className='d-flex px-5 pt-4 justify-content-between align-items-center'>
       <h1 className='display-1'>
-        Meteo<span className={`${theme ? 'text-white' : 'text-muted'}`}>App</span>
+        Weather
+        <span className={`${theme ? 'text-white' : 'text-muted'}`}>App</span>
       </h1>
       <div className='form-check form-switch'>
         <input
