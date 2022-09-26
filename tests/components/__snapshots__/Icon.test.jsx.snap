@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests in <Icon/> should match its own snapshot 1`] = `
+<div>
+  <img
+    alt="heavy rain"
+    height="180px"
+    loading="lazy"
+    src="https://openweathermap.org/img/wn/1234@4x.png"
+    width="180px"
+  />
+</div>
+`;

@@ -25,6 +25,6 @@ export const WeatherSheet = ({ children, localTime }) => {
 };
 
 WeatherSheet.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   localTime: PropTypes.number.isRequired,
 };
