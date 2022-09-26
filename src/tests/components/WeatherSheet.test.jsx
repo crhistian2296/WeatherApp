@@ -1,10 +1,9 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import { DataContext } from '../../src/components/data/DataContext';
-import { HourWeatherCard } from '../../src/components/HourWeatherCard';
-import { mockData } from './mockData';
+import { DataContext } from '../../components/data/DataContext';
+import { WeatherSheet } from '../../components/WeatherSheet';
 
-describe('tests in <HourWeathercard/>', () => {
+describe('tests in <WeatherSheet/>', () => {
   const initialValue = {
     themeToggle: {
       theme: false,
@@ -18,10 +17,7 @@ describe('tests in <HourWeathercard/>', () => {
 
   let { container } = render(
     <DataContext.Provider value={initialValue}>
-      <HourWeatherCard
-        hourvalues={mockData.location.weatherForecast.hourly.at(0)}
-        timezone_offset={mockData.location.weatherForecast.timezone_offset}
-      />
+      <WeatherSheet localTime={'3600'} />
     </DataContext.Provider>
   );
 
@@ -29,10 +25,7 @@ describe('tests in <HourWeathercard/>', () => {
     jest.clearAllMocks();
     container = render(
       <DataContext.Provider value={initialValue}>
-        <HourWeatherCard
-          hourvalues={mockData.location.weatherForecast.hourly.at(0)}
-          timezone_offset={mockData.location.weatherForecast.timezone_offset}
-        />
+        <WeatherSheet localTime={'3600'} />
       </DataContext.Provider>
     );
   });

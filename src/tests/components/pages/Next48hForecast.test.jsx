@@ -2,8 +2,8 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { DataContext } from '../../../src/components/data/DataContext';
-import Next48hForecast from '../../../src/components/pages/Next48hForecast';
+import { DataContext } from '../../../components/data/DataContext';
+import Next48hForecast from '../../../components/pages/Next48hForecast';
 import { mockData } from '../mockData';
 
 jest.mock('react-redux');

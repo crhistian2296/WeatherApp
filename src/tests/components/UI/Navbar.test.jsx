@@ -2,13 +2,14 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { DataContext } from '../../../src/components/data/DataContext';
-import CurrentForecast from '../../../src/components/pages/CurrentForecast';
+import { DataContext } from '../../../components/data/DataContext';
+import Navbar from '../../../components/UI/Navbar';
 import { mockData } from '../mockData';
 
 jest.mock('react-redux');
+// const dispatch = useDispatch();
 
-describe('tests in <CurrentForecast/>', () => {
+describe('tests in <Navbar/>', () => {
   const initialValue = {
     themeToggle: {
       theme: false,
@@ -23,11 +24,7 @@ describe('tests in <CurrentForecast/>', () => {
   let { container } = render(
     <DataContext.Provider value={initialValue}>
       <Provider store={mockData}>
-        <MemoryRouter initialEntries={['/']}>
-          <Routes>
-            <Route path='/' element={<CurrentForecast />}></Route>
-          </Routes>
-        </MemoryRouter>
+        <Navbar />
       </Provider>
     </DataContext.Provider>
   );
@@ -39,7 +36,7 @@ describe('tests in <CurrentForecast/>', () => {
         <Provider store={mockData}>
           <MemoryRouter initialEntries={['/']}>
             <Routes>
-              <Route path='/' element={<CurrentForecast />}></Route>
+              <Route path='/' element={<Navbar />}></Route>
             </Routes>
           </MemoryRouter>
         </Provider>

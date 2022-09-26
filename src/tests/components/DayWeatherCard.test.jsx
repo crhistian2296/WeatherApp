@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import { DataContext } from '../../src/components/data/DataContext';
-import { DayWeatherCard } from '../../src/components/DayWeatherCard';
+import { DataContext } from '../../components/data/DataContext';
+import { DayWeatherCard } from '../../components/DayWeatherCard';
 import { mockData } from './mockData';
 
 describe('tests in <DayWeathercard/>', () => {

@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { DataContext } from '../../../src/components/data/DataContext';
-import Header from '../../../src/components/UI/Header';
+import { DataContext } from '../../components/data/DataContext';
+import { HourWeatherCard } from '../../components/HourWeatherCard';
+import { mockData } from './mockData';
 
-describe('test in <Header/>', () => {
+describe('tests in <HourWeathercard/>', () => {
   const initialValue = {
     themeToggle: {
       theme: false,
@@ -18,11 +18,10 @@ describe('test in <Header/>', () => {
 
   let { container } = render(
     <DataContext.Provider value={initialValue}>
-      <MemoryRouter initialEntries={['/']}>
-        <Routes>
-          <Route path='/' element={<Header />}></Route>
-        </Routes>
-      </MemoryRouter>
+      <HourWeatherCard
+        hourvalues={mockData.location.weatherForecast.hourly.at(0)}
+        timezone_offset={mockData.location.weatherForecast.timezone_offset}
+      />
     </DataContext.Provider>
   );
 
@@ -30,7 +29,10 @@ describe('test in <Header/>', () => {
     jest.clearAllMocks();
     container = render(
       <DataContext.Provider value={initialValue}>
-        <Header />
+        <HourWeatherCard
+          hourvalues={mockData.location.weatherForecast.hourly.at(0)}
+          timezone_offset={mockData.location.weatherForecast.timezone_offset}
+        />
       </DataContext.Provider>
     );
   });

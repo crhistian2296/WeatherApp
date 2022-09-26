@@ -2,13 +2,13 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { CitySelection } from '../../src/components/CitySelection';
-import { DataContext } from '../../src/components/data/DataContext';
-import { mockData } from './mockData';
+import { DataContext } from '../../../components/data/DataContext';
+import WeekForecast from '../../../components/pages/WeekForecast';
+import { mockData } from '../mockData';
 
 jest.mock('react-redux');
 
-describe('tests in <CitySelection/>', () => {
+describe('tests in <WeekForecast/>', () => {
   const initialValue = {
     themeToggle: {
       theme: false,
@@ -25,7 +25,7 @@ describe('tests in <CitySelection/>', () => {
       <Provider store={mockData}>
         <MemoryRouter initialEntries={['/']}>
           <Routes>
-            <Route path='/' element={<CitySelection />}></Route>
+            <Route path='/' element={<WeekForecast />}></Route>
           </Routes>
         </MemoryRouter>
       </Provider>
@@ -39,7 +39,7 @@ describe('tests in <CitySelection/>', () => {
         <Provider store={mockData}>
           <MemoryRouter initialEntries={['/']}>
             <Routes>
-              <Route path='/' element={<CitySelection />}></Route>
+              <Route path='/' element={<WeekForecast />}></Route>
             </Routes>
           </MemoryRouter>
         </Provider>

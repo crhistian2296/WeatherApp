@@ -1,10 +1,14 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import { DataContext } from '../../src/components/data/DataContext';
-import { WeatherSheet } from '../../src/components/WeatherSheet';
+import { Provider } from 'react-redux';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { CitySelection } from '../../components/CitySelection';
+import { DataContext } from '../../components/data/DataContext';
 import { mockData } from './mockData';
 
-describe('tests in <WeatherSheet/>', () => {
+jest.mock('react-redux');
+
+describe('tests in <CitySelection/>', () => {
   const initialValue = {
     themeToggle: {
       theme: false,
@@ -18,9 +22,9 @@ describe('tests in <WeatherSheet/>', () => {
 
   let { container } = render(
     <DataContext.Provider value={initialValue}>
-      <WeatherSheet
-        localTime={mockData.location.weatherForecast.timezone_offset}
-      />
+      <Provider store={mockData}>
+        <CitySelection />
+      </Provider>
     </DataContext.Provider>
   );
 
@@ -28,9 +32,13 @@ describe('tests in <WeatherSheet/>', () => {
     jest.clearAllMocks();
     container = render(
       <DataContext.Provider value={initialValue}>
-        <WeatherSheet
-          localTime={mockData.location.weatherForecast.timezone_offset}
-        />
+        <Provider store={mockData}>
+          <MemoryRouter initialEntries={['/']}>
+            <Routes>
+              <Route path='/' element={<CitySelection />}></Route>
+            </Routes>
+          </MemoryRouter>
+        </Provider>
       </DataContext.Provider>
     );
   });

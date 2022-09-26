@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tests in <CurrentForecast/> should match with the snapshot 1`] = `
+exports[`tests in <Navbar/> should match with the snapshot 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
