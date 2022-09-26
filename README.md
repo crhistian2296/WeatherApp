@@ -47,7 +47,7 @@ El estilo elegido para el proyecto es una versión personalizada creada a partir
 WeatherApp es una aplicación de consulta meteorológica para cualquier ciudad del globo.\
 La información proviene de 2 API's del repertorio de [OpenWeather](https://openweathermap.org/api).\
 
-Para forzar el estilo de código se ha utilizado [ESlin](https://eslint.org/) en conjunto con [prettier](https://prettier.io/).\
+Para forzar el estilo de código se ha utilizado [ESlint](https://eslint.org/) en conjunto con [prettier](https://prettier.io/).\
 
 La configuración de rutas que convierten este proyecto en una SPA es hecha usando react-router.\
 
