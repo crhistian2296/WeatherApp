@@ -5,7 +5,7 @@ import { DataContext } from './data/DataContext';
 /**
  * Ficha contenedor de la informacion meteorologica
  * @param {JSX Element}
- * @param {number} localtime
+ * @param {string} localtime
  * @returns JSX Element
  */
 export const WeatherSheet = ({ children, localTime }) => {
@@ -26,5 +26,5 @@ export const WeatherSheet = ({ children, localTime }) => {
 
 WeatherSheet.propTypes = {
   children: PropTypes.node,
-  localTime: PropTypes.number.isRequired,
+  localTime: PropTypes.string.isRequired,
 };

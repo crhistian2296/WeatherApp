@@ -3,7 +3,7 @@ import React from 'react';
 
 /**
  * Devuelve una imagen con las caracteristicas especificadas
- * @param {Number} iconId
+ * @param {String} iconId
  * @param {String} weatherMain
  * @param {String} size
  * @returns JSX Element
@@ -21,9 +21,9 @@ const Icon = ({ iconId, weatherMain, size = '180px' }) => {
 };
 
 Icon.propTypes = {
-  iconId: PropTypes.number.isRequired,
+  iconId: PropTypes.string.isRequired,
   weatherMain: PropTypes.string.isRequired,
-  size: PropTypes.number,
+  size: PropTypes.string,
 };
 
 export default Icon;
