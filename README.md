@@ -4,7 +4,7 @@
 
 Este proyecto fue creado con la herramienta [Vite 2.0](https://vitejs.dev/blog/announcing-vite2.html#what-s-new-in-2-0).
 
-## Scripts disponible
+## Scripts disponibles
 
 En el directorio del proyecto existen 6 scripts:
 
@@ -45,21 +45,47 @@ El estilo elegido para el proyecto es una versión personalizada creada a partir
 # Detalles
 
 WeatherApp es una aplicación de consulta meteorológica para cualquier ciudad del globo.\
-La información proviene de 2 API's del repertorio de [OpenWeather](https://openweathermap.org/api).\
+La información proviene de 2 API's del repertorio de [OpenWeather](https://openweathermap.org/api).
 
-Para forzar el estilo de código se ha utilizado [ESlint](https://eslint.org/) en conjunto con [prettier](https://prettier.io/).\
+Para forzar el estilo de código se ha utilizado [ESlint](https://eslint.org/) en conjunto con [prettier](https://prettier.io/).
 
-La configuración de rutas que convierten este proyecto en una SPA es hecha usando react-router.\
+La configuración de rutas que convierten este proyecto en una SPA es hecha usando react-router.
 
 Para la gestión del estado se hace uso del hook useContex, [redux](https://es.redux.js.org/) y thunk para las peticiones asincronas a las API's.\
 La aplicación posee persistencia de estado valiendose del LocalStorage del navegador.
 
 Para el estilo del proyecto se usa una implementación de [Bootstrap 5](https://getbootstrap.com/docs/5.2/getting-started/introduction/) con clases. También se ha implementado un tema oscuro\
-para activarlo solo es necesario accionar el switch de la parte superior derecha.\
+para activarlo solo es necesario accionar el switch de la parte superior derecha.
 
 La parte del testing se implementó haciendo uso de [Testing Library](https://testing-library.com/) y [Jest](https://jestjs.io/). Se prestó especial atención a la correcta\
 renderización de los componentes.
 
-Este proyecto tiene margen de mejora, pero el tiempo de desarrollo fue ligeramente ajustado (menos de 1 semana).\
+Este proyecto tiene margen de mejora, pero el tiempo de desarrollo fue ligeramente ajustado (menos de 1 semana).
 
 Comentarios, propuestas y cualquier tipo de feedback es bien recibido. Siempre que sea respetuosamente.
+
+# Instalación
+
+Para lanzar esta aplición es necesario tener instalado el manejador de paquetes [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable).\
+Primero en necesario copiar el repositorio. Para ello abrimos la consola de comandos y usamos:
+
+```
+git clone https://github.com/crhistian2296/WeatherApp.git WeatherApp
+```
+
+Una vez clonado accedemos al interior del repositorio y lo instalamos.
+
+```
+cd WeatherApp
+yarn install
+```
+
+Para finalizar iniciamos la aplicación.
+
+```
+yarn dev
+```
+
+En consola aparecera un aviso informando el puerto donde el servidor local ha sido activado.\
+Haciendo `ctrl + click` al enlace en consola se abre una pestaña del navegador con la aplicación\
+ya desplegada y lista para utilizar.
