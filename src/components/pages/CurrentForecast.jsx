@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { capitalizeText } from '../../helpers/capitalizeText';
 import Icon from '../Icon';
 import { WeatherSheet } from '../WeatherSheet';
+import BlanckPage from './BlanckPage';
 
 /**
  * Ruta que muestra informacion meteorologica actual
@@ -13,8 +14,17 @@ const CurrentForecast = () => {
   // Obtencion de informacion concerniente a localizacion y meteorologia
   const reduxState = useSelector(state => state);
   const { selectedCity } = reduxState.location;
-  const { timezone_offset: timezoneOffset = 0, current } =
-    reduxState.location.weatherForecast;
+
+  // Valida si la informacion existe para renderizar el componente
+  let timezoneOffset = 0;
+  let current = {};
+  if (
+    Object.prototype.hasOwnProperty.call(reduxState.location, 'weatherForecast')
+  ) {
+    timezoneOffset = reduxState.location.weatherForecast.timezone_offset;
+    current = reduxState.location.weatherForecast.current;
+  } else return <BlanckPage />;
+
   const timezoneOffsetCorrected = timezoneOffset - 2 * 3600;
   const {
     dt,
